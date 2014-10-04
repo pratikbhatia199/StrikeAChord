@@ -1,0 +1,21 @@
+create database strike_a_chord;
+use strike_a_chord;
+
+create table basic_user(
+username varchar(40) not null,
+firstname varchar(40) not null,
+lastname varchar(40) not null,
+primary key(username)
+
+);
+
+create table member(
+username varchar(40) not null,
+expiry_date date not null,
+foreign key (username) references basic_user(username)
+on update cascade
+on delete restrict,
+primary key(username)
+);
+
+
