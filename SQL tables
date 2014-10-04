@@ -18,4 +18,45 @@ on delete restrict,
 primary key(username)
 );
 
+create table songs(
+sid int not null auto_increment,
+name varchar(40),
+length_of_song timestamp,
+primary key(sid)
+);
+
+create table chords(
+cid tinyint not null auto_increment,
+cname char(4) not null unique,
+instrument varchar(40),
+name varchar(40), 
+notes varchar(40),
+primary key (cid)
+);
+
+create table has_chords(
+sid int not null,
+cid tinyint not null,
+foreign key (sid) references songs(sid)
+on update cascade
+on delete restrict,
+foreign key (cid) references chords(cid)
+on update cascade
+on delete restrict,
+primary key(sid, cid)
+);
+
+create table has_mastered(
+username varchar(40) not null,
+cid tinyint not null,
+
+foreign key (username) references basic_user(username)
+on update cascade
+on delete restrict,
+
+foreign key (cid) references chords(cid)
+on update cascade
+on delete restrict,	
+primary key(username, cid)
+);
 
