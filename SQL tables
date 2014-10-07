@@ -75,4 +75,3 @@ primary key(username, cid, sid)
 );
 
 
-
