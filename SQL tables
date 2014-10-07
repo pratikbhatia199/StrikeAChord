@@ -26,8 +26,8 @@ primary key(sid)
 );
 
 create table chords(
-cid tinyint not null auto_increment,
-cname char(4) not null unique,
+cid smallint not null auto_increment,
+cname char(10) not null unique,
 instrument varchar(40),
 name varchar(40), 
 notes varchar(40),
@@ -36,7 +36,7 @@ primary key (cid)
 
 create table has_chords(
 sid int not null,
-cid tinyint not null,
+cid smallint not null,
 foreign key (sid) references songs(sid)
 on update cascade
 on delete restrict,
@@ -48,7 +48,7 @@ primary key(sid, cid)
 
 create table has_mastered(
 username varchar(40) not null,
-cid tinyint not null,
+cid smallint not null,
 
 foreign key (username) references basic_user(username)
 on update cascade
@@ -62,7 +62,7 @@ primary key(username, cid)
 
 create table gets_recommendations(
 username varchar(40) not null,
-cid tinyint not null,
+cid smallint not null,
 sid int not null,
 date date,
 foreign key (username, cid) references has_mastered(username, cid)
