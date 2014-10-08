@@ -4,11 +4,11 @@ pvb2106/Pratik Bhatia
 
 Queries:
 
-select distinct strike_a_chord.songs.name from strike_a_chord.songs, strike_a_chord.has_chords, strike_a_chord.chords where cname='G' or cname='C' or cname='F';
+select distinct strike_a_chord.songs.name from strike_a_chord.songs, strike_a_chord.has_chords, strike_a_chord.chords where strike_a_chord.songs.sid=strike_a_chord.has_chords.sid and strike_a_chord.chords.cid=strike_a_chord.has_chords.cid and (cname='G' or cname='C' or cname='F');
 A basic user will search for a song that contains some or all the chords they type into a search bar. If a user types in G, C, and F, this is the query that will be used 
 to determine a list of songs for them. 
 
-select distinct strike_a_chord.songs.name from strike_a_chord.songs, strike_a_chord.has_chords where cid IN (select cid from strike_a_chord.has_mastered where username='smf2147');
+select distinct strike_a_chord.songs.name from strike_a_chord.songs, strike_a_chord.has_chords where strike_a_chord.songs.sid=strike_a_chord.has_chords.sid and cid IN (select cid from strike_a_chord.has_mastered where username='smf2147');
 A member user can search based on the chords they've specified that they've mastered. This query lists the songs that contain the chords mastered by user smf2147. 
 
 select strike_a_chord.songs.name, cname from strike_a_chord.songs, strike_a_chord.chords, strike_a_chord.has_chords where strike_a_chord.songs.sid=strike_a_chord.has_chords.sid and strike_a_chord.chords.cid=strike_a_chord.has_chords.cid group by strike_a_chord.songs.name;
