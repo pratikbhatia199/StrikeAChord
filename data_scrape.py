@@ -108,6 +108,6 @@ def generate_day_between_today_and_past_three_months():
     print random_date_val
 
 
-#username_scraper()
-#data_scraper()
+# username_scraper()
+# data_scraper()
 generate_day_between_today_and_past_three_months()
