@@ -1,0 +1,17 @@
+Foreign key:
+1. Check if the entry present in Member is present in basic user and unique
+2. Member gets recommended only those songs that he has mastered
+
+Business logic:
+1. Ensure that no user has recommendations dating past his expiration date.
+    Optional -> has weekly recommendations for every week prior to his expiration date (upto only 4 weeks)
+
+
+
+1<= examples:
+1. Artist -> Song (performs relationship)
+2. Song -> Artist (performs relationship)
+3. Basic User -> Chords (has_mastered relationship)
+
+0<=1 examples:
+1. Member -> gets recommended
