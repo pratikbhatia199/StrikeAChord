@@ -1,10 +1,15 @@
 <?php
 require_once "connect.php";
-include "links.php"
+include "index.php"
 ?>
-<html>
-<body>
-Data: <?php echo $_GET["username"]; 
+
+Data: <?php 
+session_unset();
+session_destroy();
+session_start();
+$_SESSION['username'] = $_GET["username"];
+
+echo $_GET["username"]; 
 echo $_GET["firstname"];
 echo $_GET["lastname"]; 
 echo $_GET["type"];
@@ -15,6 +20,8 @@ if ($_GET["type"] == "basic" or $_GET["type"] == "Basic"){
 
 	$sql = "INSERT INTO basic_user (username, firstname, lastname) VALUES ('".$_GET["username"]."','".$_GET["firstname"]."','".$_GET["lastname"]. "')";
 	$result = $conn->query($sql);
+	header('Location: login_index.php');
+	exit;
 
 }
 elseif ($_GET["type"] == "member" or $_GET["type"] == "Member"){
@@ -25,7 +32,8 @@ elseif ($_GET["type"] == "member" or $_GET["type"] == "Member"){
 	
 	$sql = "INSERT INTO member (username, expiry_date) VALUES ('".$_GET["username"]."','". date("Y-m-d")."')";
 	$result = $conn->query($sql);
-
+	header('Location: login_index.php');
+	exit;
 	
 
 }
@@ -40,5 +48,3 @@ else echo "Error in form, please correct."
 $conn->close();
 ?>
 
-</body>
-</html>

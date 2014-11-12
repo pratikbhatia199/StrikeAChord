@@ -1,13 +1,12 @@
 <?php
 require_once "connect.php";
-include "links.php"
+include "index.php"
 ?>
-
-<form action="signup_script.php" method="get">
-Username: <input type="text" name="username"><br>
-First Name: <input type="text" name="firstname"><br>
-Last Name: <input type="text" name="lastname"><br>
-Type (basic or member): <input type="text" name="type"><br>
+<form class='form_style' action="signup_script.php" method="get">
+<div class='form_field_wrapper'>Username: <input type="text" name="username"></div><br>
+<div class='form_field_wrapper'>First Name: <input type="text" name="firstname"></div><br>
+<div class='form_field_wrapper'>Last Name: <input type="text" name="lastname"></div><br>
+<div class='form_field_wrapper'>Type (basic or member): <input type="text" name="type"></div><br>
 <input type="submit">
 </form>
 
@@ -15,3 +14,6 @@ Type (basic or member): <input type="text" name="type"><br>
 <?php
 $conn->close();
 ?>
+</div>
+</body>
+</html>

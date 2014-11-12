@@ -1,0 +1,72 @@
+body{
+	background-color: lightblue;
+}
+
+.my_brand{
+	padding:0 !important;
+	height: 50px !important;
+}
+
+.form_style{
+border: 2px solid black;
+padding: 10px;
+width: 350px;
+margin: auto;
+}
+
+.form_style > input[type=text]{
+	float: right;
+	position: relative;
+}
+
+	.body_content_wrapper{
+	visibility: visible;
+	zoom: 1;
+	opacity: 1;
+	padding-bottom: 0px;
+	width: 980px;
+	min-height: 969px;
+	position: relative;
+	margin: 0 auto;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	vertical-align: baseline;
+	background: 0 0;
+	font-size: 10px;
+	font-family: Arial,Helvetica,sans-serif;
+	display: block;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.navbar-nav li{
+	font-size: 18pt;
+}
+.brand_tagline{
+	top: 7px;
+}
+
+.form_field_wrapper{
+	height: 30px;
+}
+
+.form_field_wrapper input{
+	float:right;
+}
+
+.login_name{
+	padding: 10px;
+	height: 50px;
+	background: blue;
+	float: right;
+	font-size: 15pt;
+	color: white;
+			
+	
+}
+.status{
+	display:inline-block;
+	font-size: 14pt;
+	position: relative;
+	left: 400px;
+}

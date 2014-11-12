@@ -1,6 +1,6 @@
 <?php
 require_once "connect.php";
-include "links.php"
+include "login_index.php"
 ?>
 
 Searching recommendations for username: <?php echo $_GET["username"]; ?><br>

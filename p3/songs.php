@@ -1,10 +1,9 @@
 <?php
 require_once "connect.php";
-include "links.php"
+include "login_index.php";
 ?>
-
-<form action="search_songs.php" method="get">
-Song name: <input type="text" name="name"><br>
+<form class='form_style' action="search_songs.php" method="get">
+<div class='form_field_wrapper'>Song name: <input type="text" name="name"></div><br>
 <input type="submit">
 </form>
 
@@ -27,3 +26,13 @@ if ($result->num_rows > 0) {
 <?php
 $conn->close();
 ?>
+                     </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+</div>
+</body>
+</html>
